@@ -31,9 +31,10 @@ namespace SocialApp.Application.Features.Auth.Command.Register
                 .MinimumLength(6)
                 .Equal(x=>x.Password)
                 .WithName("Parola tekrarı");
-
-            
-
+            RuleFor(x => x.UserName)
+                .NotEmpty()
+                .MinimumLength(6)
+                .WithName("Kullanıcı Adı");
         }
     }
 }

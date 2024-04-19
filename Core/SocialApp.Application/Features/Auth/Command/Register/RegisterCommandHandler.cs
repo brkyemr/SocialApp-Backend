@@ -31,7 +31,9 @@ namespace SocialApp.Application.Features.Auth.Command.Register
             await authRules.UserShouldNotBeExist(await userManager.FindByEmailAsync(request.Email));
 
             User user = mapper.Map<User, RegisterCommandRequest>(request);
-            user.UserName = request.Email;
+            //User user = mapper.Map<RegisterCommandRequest, User>(request);
+
+            user.UserName = request.UserName;
             user.SecurityStamp = Guid.NewGuid().ToString();  //aynı anda işlem yapmaya çalışan userları ayırmak için 
 
             IdentityResult result = await userManager.CreateAsync(user,request.Password);

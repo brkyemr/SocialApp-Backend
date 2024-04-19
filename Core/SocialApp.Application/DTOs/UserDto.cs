@@ -7,7 +7,7 @@ namespace SocialApp.Application.DTOs
 {
     public class UserDto
     {
-        public string Name { get; set; }
-        public string ProfileImagePath { get; set; }
+        public string UserName { get; set; }
+        public string ProfileImage { get; set; }
     }
 }
