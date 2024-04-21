@@ -6,6 +6,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SocialApp.Application.Features.Users.Queries.GetAllUsers;
+using SocialApp.Application.Features.Users.Queries.GetUserProfile;
 
 namespace SocialApp.Api.Controllers
 {
@@ -27,6 +28,14 @@ namespace SocialApp.Api.Controllers
         public async Task<IActionResult> GetAllUsers()
         {
             var response = await mediator.Send(new GetAllUsersQueryRequest());
+
+            return Ok(response);
+        }
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> GetUserProfile(GetUserProfileQueryRequest request)
+        {
+            var response = await mediator.Send(request);
 
             return Ok(response);
         }

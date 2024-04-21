@@ -13,10 +13,12 @@ namespace SocialApp.Domain.Entities
         public string? RefreshToken { get; set; }
         public string? ProfileImage { get; set; }
         public DateTime? RefreshTokenExpireTime { get; set; }
+        public string? Bio { get; set; }
 
         // IEntityBase arayüzünden gelen özellikleri ekleyin
         public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+        public string? Gender { get; set; }
         // IEntityBase arayüzündeki diğer özellikleri veya metotları ekleyin
     }
 }
